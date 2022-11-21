@@ -1,11 +1,11 @@
 /*
  * File: Page.java
- * Created Date: 2021-09-24 14:26:47
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2022-11-21 
+ * Author: Boros Zoltán by BorosFather
+ * Github: https://github.com/BorosFather
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+* Last Modified: 2022-11-21
+ * Modified By: Boros Zoltán by BorosFather
  * -----
  * Copyright (c) 2021 Sallai Andras
  * 
@@ -15,22 +15,23 @@
 package models;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import javax.swing.text.Document;
 
 public class Page {
     public String url;
+    public String Jsoup;
+    
     public ArrayList<String> getContent() {
         String result = "semmi";
         ArrayList<String> wordList = new ArrayList<>();
         if (!url.isEmpty()) {
             try {
-                Connection conn = Jsoup.connect(this.url);
+                String conn = Jsoup.concat(this.url);
                 Document doc = conn.get();
                 result = doc.body().text();
                 

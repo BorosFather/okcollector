@@ -1,11 +1,11 @@
 /*
  * File: WordsController.java
- * Created Date: 2021-09-24 10:43:16
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2022-11-21 
+ * Author: Boros Zoltán by BorosFather
+ * Github: https://github.com/BorosFather
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+ *  Last Modified: 2022-11-21
+ * Modified By: Boros Zoltán by BorosFather
  * -----
  * Copyright (c) 2021 Sallai Andras
  * 
@@ -18,7 +18,7 @@ import views.MainWindow;
 
 public class WordsController {
     MainWindow mainWindow;
-    //Az osztály konstruktora
+    
     public WordsController(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
         this.mainWindow.exitButton.addActionListener(event ->{
@@ -27,8 +27,3 @@ public class WordsController {
     }
     
 }
-
-/**
- * 2021-09-24 Kezdés
- * 2021-09-26 Szemetelés
- */

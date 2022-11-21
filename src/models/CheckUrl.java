@@ -1,11 +1,11 @@
 /*
  * File: CheckUrl.java
- * Created Date: 2021-09-24 15:50:04
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2022-11-21 
+ * Author: Boros Zoltán by BorosFather
+ * Github: https://github.com/BorosFather
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+ *  Last Modified: 2022-11-21
+ * Modified By: Boros Zoltán by BorosFather
  * -----
  * Copyright (c) 2021 Sallai Andras
  * 
@@ -15,12 +15,11 @@
 package models;
 
 public class CheckUrl {
-    // TODO: beírt URL ellenőrző
+   
     public void check(String url) {
 
-    }//URL ellenőrzés vége
-    // TODO: ha nincs https:// akkor kiegészítjük
+    }
     public void expandProtocol() {
 
-    }//URL kiegészítés vége
+    }
 }

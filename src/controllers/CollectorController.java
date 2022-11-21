@@ -1,11 +1,11 @@
 /*
  * File: CollectorController.java
- * Created Date: 2021-09-24 10:42:41
- * Author: Sallai Andras
- * Github: https://github.com/andteki
+ * Created Date: 2022-11-21 
+ * Author: Boros Zoltán by BorosFather
+ * Github: https://github.com/BorosFather
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+ *  Last Modified: 2022-11-21
+ * Modified By: Boros Zoltán by BorosFather
  * -----
  * Copyright (c) 2021 Sallai Andras
  * 
@@ -19,13 +19,6 @@ import java.util.ArrayList;
 import models.Page;
 import views.MainWindow;
 
-/**********************KEZDÉS************************************* */
-
-/* 
-    FIXME Az öröklés felesleges. 
-    Ha megszüntetjük szükség lesz egy mainWindow adattagra. 
-*/
-
 // A CollectorController osztály
 public class CollectorController extends MainController {
     //A CollectorController osztály konstruktora    
@@ -33,41 +26,32 @@ public class CollectorController extends MainController {
         super(mainWindow);
         //A vágólap tartalmát beillesztjük
 
-
-        /**************** pasteButton ****************************/
-
         mainWindow.pasteButton.addActionListener(event -> {
             System.out.println("beillesztés");
             mainWindow.urlField.paste();
         }); // A pasteButton eseménykezelő vége
 
-
-        /**************** startButton ****************************/
-
-
         //Indul a szógyűjtés
         mainWindow.startButton.addActionListener(event -> {
             // URL
-            String utvonal = mainWindow.urlField.getText();
-            if (utvonal.isEmpty()) {
-                utvonal = "https://index.hu";
+            String path = mainWindow.urlField.getText();
+            if (path.isEmpty()) {
+                path = "https://index.hu";
             }
             //Egy weblap
             Page page = new Page();
-            page.setUrl(utvonal);
+            page.setUrl(path);
             //Gyűjtött szavak ide kerülnek:
-            ArrayList<String> w = page.getContent();
+            ArrayList<String> web = page.getContent();
 
-            for(String word : w) {
+            for(String word : web) {
                 if (mainWindow.wordsModel.indexOf(word)<0) {
                     mainWindow.wordsModel.addElement(word);
                 }                
             } // for ciklus vége
             Integer wordCount = mainWindow.wordsModel.getSize();
             mainWindow.statusBar.setm("Szavak: " + wordCount.toString());
-        }); //A start eseménykezelő vége
-
-         /**************** VÉGE ****************************/
+        }); 
 
 
     }   

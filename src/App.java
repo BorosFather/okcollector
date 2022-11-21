@@ -24,5 +24,5 @@ new MainController(mainWindow);
 new CollectorController(mainWindow);
 new WordsController(mainWindow);
 mainWindow.setVisible(true);
-}
+    }
 }
